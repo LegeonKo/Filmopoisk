@@ -1,4 +1,7 @@
 <template>
+  <head>
+    <title>Filmopoisk | Details</title>
+  </head>
   <div class="container">
     <div
         class="film"
@@ -51,12 +54,13 @@ import {useFilmStore} from "~/store/global.store";
 
 const store = useFilmStore();
 const {id} = useRoute().params;
+const router = useRouter();
 
 const goBack = () => {
-  navigateTo('/')
+  router.back();
 }
 
-store.filmDetails(id)
+store.filmDetails(id);
 
 </script>
 

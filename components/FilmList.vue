@@ -13,6 +13,7 @@
         :Poster="film.Poster"
       />
     </div>
+    <Paginator />
   </div>
   <div
       class="search_error"
@@ -23,6 +24,7 @@
 
 <script setup lang="ts">
 import {useFilmStore} from "~/store/global.store";
+import Paginator from "~/components/Paginator.vue";
 
 interface Film {
   Title: string,

@@ -1,6 +1,8 @@
 
 <template>
-
+  <head>
+    <title>Filmopoisk</title>
+  </head>
   <div class="container">
     <FilmList/>
   </div>
@@ -20,6 +22,13 @@ onBeforeMount(async () => {
     await store.searchFilm(s, page);
   }
 })
+
+watch(
+    () => route.fullPath,
+    () => {
+        store.searchFilm(route.query.s, route.query.page)
+    }
+);
 
 </script>
 
